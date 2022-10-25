@@ -1,0 +1,98 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>Generic validation</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <style>
+      .error{
+        color: red;
+      }
+      .input{
+        outline: 2px solid #ccc;;
+      }
+      .input:invalid{
+        outline: 2px solid #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5">
+      <h2 class="pt-3 pb-3">Application  form</h2>   
+  <form name= "myform" action="#" method="post" onsubmit="return false" style="border: 2px solid gray; padding:10px" class= pb-3>
+      <div class="container pt-3">
+
+      <div class="col-XL-5 mb-1 pb-3">
+        <label > Your name</label>
+        <input type="text" class="form-control input" placeholder="Enter name" name="name" id="name" onkeyup="validname()">
+      </div>
+      <span id="uname" class="error" style="display:none">required feild</span>
+
+      <div class="col-XL-5 mb-1">
+        <label >Date of birth</label>
+        <input type="date" class="form-control input" placeholder="DD/MM/YYYY" name="date" id="date" onkeyup="validdate()">
+      </div>
+      <span id="udate" class="error" style="display:none">required feild</span>
+
+      <div class="col-XL-5 mb-1">
+        <label >Email</label>
+         <input type="email" class="form-control input" placeholder=" Email" name="email" id="email" onkeyup="validmail()">
+      </div>
+      <span id="uemail" class="error" style="display:none">required feild</span>
+
+      <div class="col-XL-5 mb-1 pb-3">
+        <label >Mobile</label>
+        <input type="number" class="form-control input"placeholder="Number" name="number" id="number" onkeyup="validnumber()">
+      </div>
+      <span id="unumber" class="error"  style="display:none">required feild </span>
+
+      <div>
+        <label >Gender</label>
+       <div class="form-check form-check-inline pb-3">
+        <input class="form-check-input" type="radio" name="gender" id="gender" onkeyup="validgender()" >
+      <label>Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+     <input class="form-check-input" type="radio" name="gender" id="gender" onkeyup="validgender()">
+     <label>Female</label>
+    </div>
+  </div>
+    <span id="ugender" class="error"  style="display:none">required feild</span>
+    
+      <div class="col-XL-5 mb-1 pb-3">
+        <label for="country" >Country</label>
+        
+         <select class="form-select" name="country" id="country" onkeyup="validcountry()" >
+          <option value="">select your country</option>
+          <option value="1">India</option>
+          <option value="2">Australia</option>
+          <option value="3">Canada</option>
+        </select>
+      </div>
+      <span id="ucountry" class="error"  style="display:none">required feild</span>
+
+      <div class="form-check mt-3 "  >
+        <input type="checkbox"  id="mycheck" name="mycheck" onkeyup="validcheck()">
+        <label for="mycheck">Agree to privacy policy</label>
+      </div>
+      <span id="text" class="error" style="display:none;">Field is required</span>
+
+      <div class="d-grid  d-md-flex justify-content-end">
+      <button class="btn btn-primary" type="submit" onclick=" validateForm()" >Submit</button>
+    </div>
+    </div>
+
+    </form>
+
+   </div>
+  </div>
+   </div> 
+  </body>
+</html>
